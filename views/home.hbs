@@ -1,0 +1,68 @@
+<section id="home" class="panel">
+    <div class="mainB"></div>
+    {{!-- <img src="images/bg.jpg" alt="home banner" class="mainB"> --}}
+    <div id="b-text">
+    <h2>Wondering about the new place</h2>
+    <h3>Creatively & Dream & Goals</h3>
+    </div>
+</section>
+
+<section id="about" class="panel">
+    <h1 class="line">About</h1>
+    <img src="images/sujin.jpg" alt="photo of myself" id="sujin">
+
+    <p class="aboutme">I’m 21 years old, study interactive media design at Fanshawe College. As myself, did not have a coding background but still learning to code. Along with my design skills. I’m into web design, UX/UI, and motion as well. Trying to do new things all the time. Always, wondering and dreaming.</p>
+
+    <h2>Sujin Lee</h2>
+    <h3>Designer & Front-end developer</h3>
+    <!-- database of skills code tools will go here-->
+    <div>
+    {{#each skill}}
+        <div class="work-panel">
+            <h2>{{Name}}</h2>
+        </div>
+    {{/each}}
+    </div>
+
+</section>
+
+<section id="work" class="panel">
+    <h1 class="line">Work</h1>
+    <div>
+    {{#each info}}<!-- this is like a JS forEach loop -->
+        <div class="work-panel">
+            <a href="{{ID}}" class="w-link">
+                <img src="images/{{Image}}" alt="work thumbnails" class="thumb">
+                <div class="img-hover"><p>Click to see more</p></div>
+            </a>
+        </div>
+    {{/each}}
+    </div>
+
+    <div class="video">
+        <h2 class="hidden">Demo Reel</h2>
+        <video src="includes/demo.mp4" id="video"></video>
+        <div class="video-controls">
+                <button class="play-pause"><img src="images/play.png" alt="play/pause icon" id="plause"></button>
+                <input type="range" id="progress-bar" value="0">
+                <button class="mute"><img src="images/volume.png" alt="volume icon" id="volume"></button>
+                <input type="range" id="vol" min="0" max="10" step="1" value="10">
+                <button class="full"><img src="images/fullscreen.png" alt="fullscreen icon" id="fullscreen"></button>
+        </div>
+    </div>
+
+</section>
+
+<section id="contact" class="panel">
+    <h1 class="line">Contact</h1>
+    <div id="form">
+        <form id="touch" action="contact" method="post">
+            <input placeholder="Name*" type="text">
+            <input placeholder="Email*" type="email">
+            <input placeholder="Phone" type="number">
+            <textarea placeholder="Text message"></textarea>
+            <input placeholder="What is 2+3?" name="human">
+            <button class="submit-btn">Submit</button>
+        </form>
+    </div>
+</section>

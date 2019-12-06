@@ -1,0 +1,146 @@
+@import '_vars';
+@import 'modules/_navbar';
+@import 'modules/_lightbox';
+
+
+main {
+    width: 100%;
+    overflow: hidden;
+    background-color: $bg-color;
+    font-family: Arial, Helvetica, sans-serif;
+
+    @media screen and (min-width: 640px){
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+
+.hidden { display: $hidden; }
+
+.line{
+    margin: 0 auto;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Nunito', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding-bottom: 2px;
+    border-bottom: 4px $underline;
+    width: 8%;
+    text-align: center;
+    border-style: dotted;
+}
+
+#home {
+    width: 100%;
+    height: 100vh;
+
+    .mainB {
+        width: 100%;
+        height: 100vh;
+        background-image: url("../images/bg.jpg");
+        background-position: bottom;
+        background-size: cover;
+        position: absolute;
+    }
+
+    #b-text {
+        position: relative;
+        top: 45%;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        
+        h2, h3 {
+            text-align: center;
+            color: $bg-color;
+            font-size: 3em;
+            letter-spacing: 3px;
+            line-height: 1.25em;
+            font-family: 'Mali', cursive, Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+    }
+}
+
+#about {
+    //width: 100%;
+    height: 100vh;
+
+    #sujin {
+        margin: 40px 80px 0 50px;
+        float: left;
+        width: 340px;
+        height: 450px;
+        border-radius: 20px;
+        object-position: center;
+        object-fit: cover;
+    }
+
+    .aboutme {
+        margin-top: 40px;
+        width: 86%;
+        //height: 55vh;
+        text-align: left;
+        font-size: 1.3em;
+        font-family: 'Nunito', Arial, Helvetica, sans-serif;
+        line-height: 1.8em;
+    }
+}
+
+#contact {
+    width: 100%;
+    height: 100vh;
+    
+    #form {
+        width: 70%;
+        margin: 0 auto;
+        text-align: center;
+        }
+    
+        input {
+            width: 100%;
+            height: 30px;
+            margin-top: 30px;
+            padding: 5px;
+            border-bottom: 2px;
+            border-style: none none solid none;
+            font-family: 'Nunito', Arial, Helvetica, sans-serif;
+            font-weight: normal;
+            font-size: 1.2em;
+            box-shadow: none;
+        }
+    
+        textarea {
+            width: 100%;
+            height: 160px;
+            margin-top: 30px;
+            padding: 5px;
+            border-bottom: 2px;
+            border-style: none none solid none;
+            border-color: $blue;
+            font-family: 'Nunito', Arial, Helvetica, sans-serif;
+            font-weight: lighter;
+            font-size: 1.2em;
+        }
+    
+        .submit-btn {
+            width: 160px;
+            height: 40px;
+            background-color: $underline;
+            color: $text;
+            font-size: 1.2em;
+            font-family: 'Nunito', Arial, Helvetica, sans-serif;
+            border: 1px solid $text;
+            border-radius: 20px;
+            margin-top: 80px;
+            transition: .3s;
+            &:hover{
+              transform: scale(1.01);
+              background-color: rgb(255, 163, 25);
+        }
+    }
+}
+
+
+
+@import 'modules/_footer'
