@@ -1,50 +1,108 @@
 header {
     width: 100%;
     height: 10vh;
-    background-color: $bg-color;
+    background-color: $main-color;
     display: flex;
     position: fixed;
-    z-index: 3;
+    z-index: 2;
 
-    #logo {
-        width: 32%;
-        //margin: auto;
-        margin-left: 40px;
-        padding-left: 20px;
-        padding-top: 5px;
-        transition: .3s;
-        &:hover {
-          cursor: pointer; transform: scale(1.03);
-        }
+  .logoL {
+    width: 40%;
+    margin: auto;
+    margin-left: 20px;
+    transition: .3s;
 
-        img { width: 40%; min-width: 160px;}
+    img {
+      width: 30%;
+      transition: .3s;
+      max-width: 50px;
+      &:hover {
+        cursor: pointer; transform: scale(1.03);
+      }
     }
-    
+  }
 }
 
-@media only screen and (min-width: 576px) and (max-width: 768px) {
-    #logo img {
-        width: 60%;
-    }
-}
 
-@media only screen and (min-width: 769px) {
-  #burger {display: none;}
-
+#burger{
+  background: url(../images/burger_menu.svg) center no-repeat;
+  border: none;
+  width: 30%;
+  max-width: 40px;
+  margin-right: 20px;
+  transition: all .2s ease-in-out;
+  &:hover {
+    cursor: pointer; transform: scale(1.03);
+  }
 }
 
 #mainNav {
-    width: 8%;
+  font-family: "Mali", cursive;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 520px) {
+
+  #mobileNavCon {
+    display: none;
+    &.blank {
+      display: flex;
+      flex-direction: column;
+      margin-top: 63px;
+      height: 25px;
+      width: 100%;
+      background-color: rgba(255,255,255,.8);
+      position: fixed;
+    }
+  }
+
+  #mainNav {
+    display: none;
+    &.slideToggle {
+      display: flex;
+      flex-direction: column;
+      margin-top: 88px;
+      width: 100%;
+      background-color: rgba(255,255,255,.8);
+      position: fixed;
+
+        ul {
+          display: flex;
+          flex-direction: column;
+
+          li a {
+            display: block;
+            padding: 15px 0;
+            text-align: center;
+            font-weight: bold;
+            text-decoration: none;
+            line-height: normal;
+            color: $text;
+            &.onPage{color: rgb(255, 89, 47);}
+          }
+        }
+    }
+  }
+}
+
+@media only screen and (min-width: 521px) {
+  #burger { display: $hidden }
+
+  header .logoL img{
+    max-width: 60px;
+  }
+}
+
+@media only screen and (min-width: 521px) and (max-width: 767px) {
+
+  #mainNav {
     margin: 0 auto;
-    font-family: "Mali", cursive, Arial, Helvetica, sans-serif;
-    font-weight: bold;
 
     ul {
         list-style-type: none;
         display: flex;
         flex-direction: row;
         
-
         li {
             transition: .3s;
             &:hover {
@@ -56,9 +114,10 @@ header {
                 width: 100%;
                 display: block;
                 color: $text;
-                font-size: 1.5em;
+                font-size: 1em;
                 text-decoration: none;
-                padding-left:  60px;
+                padding-left: 20px;
+                margin-right: 10px;
                 text-transform: uppercase;
                 line-height: 10vh;
                 cursor: pointer;
@@ -69,69 +128,68 @@ header {
                     content: '';
                     position: absolute;
                     bottom: 20%;
-                    left: 30%;
+                    left: 20%;
                     background-color: $underline;
                     border-radius: 20px;
-                    height: 4px;
+                    height: 3px;
                     width: 0%;
                     -webkit-transition: width 0.3s, background-color 0.5s ease-out;
                     transition: width 0.3s, background-color 0.5s ease-out;
                 }
 
-                a:hover::before { width: 40%; }
+                a:hover::before { width: 50%; }
         }
     }
+  }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
 
-    #mobileNavFiller {display: none;
-      &.fill-it{
-        display: flex;
-        flex-direction: column;
-        margin-top: 60px;
-        height: 28px;
-      	width: 100%;
-      	background-color: rgba(255,255,255,.86);
-       	position: fixed;
-      }
-    }
-    #mainNav {display: none;
-      &.slideToggle {
-        display: flex;
-        flex-direction: column;
-        margin-top: 88px;
-      	width: 100%;
-      	background-color: rgba(255,255,255,.86);
-       	position: fixed;
-        ul {
-          display: flex;
-          flex-direction: column;
-         li a {
-          display: block;
-          padding: 15px 0;
-          text-align: center;
-        	font-weight: normal;
-        	text-decoration: none;
-          line-height: normal;
-          &.onPage{color: black;}
+  #mainNav {
+    margin: 0 auto;
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      margin-left: 20px;
+      
+      li {
+          margin-left: 20px;
+          transition: .3s;
+          &:hover {
+          transform: scale(1.05);
           }
-        }
-      }
-    }
 
-    #burger{
-      background: url(../images/burger_menu.svg) center no-repeat;
-      border: none;
-      width: 20%;
-      max-width: 90px;
-      margin-right: 10px;
-      outline: none;
-      transition: all .2s ease-in-out;
-      &.expanded {
-        -webkit-transform: rotateZ(90deg);
-        -ms-transform: rotateZ(90deg);
-        transform: rotateZ(90deg);
+          a {
+              position: relative;
+              width: 100%;
+              display: block;
+              color: $text;
+              font-size: 1.5em;
+              text-decoration: none;
+              padding-left: 20px;
+              text-transform: uppercase;
+              line-height: 10vh;
+              cursor: pointer;
+              &.onPage {transition: .25s ease-in-out; color: tomato;}
+          }
+
+              a::before { 
+                  content: '';
+                  position: absolute;
+                  bottom: 20%;
+                  left: 25%;
+                  background-color: $underline;
+                  border-radius: 20px;
+                  height: 3px;
+                  width: 0%;
+                  -webkit-transition: width 0.3s, background-color 0.5s ease-out;
+                  transition: width 0.3s, background-color 0.5s ease-out;
+              }
+
+              a:hover::before { width: 50%; }
       }
     }
+  }
 }
