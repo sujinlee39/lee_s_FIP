@@ -1,6 +1,6 @@
 <section id="home" class="panel">
+    <h2 class="hidden">Home Page</h2>
     <div class="mainB"></div>
-    {{!-- <img src="images/bg.jpg" alt="home banner" class="mainB"> --}}
     <div id="b-text">
     <h2>Wondering about the new place</h2>
     <h3>Creatively & Dream & Goals</h3>
@@ -8,40 +8,60 @@
 </section>
 
 <section id="about" class="panel">
-    <h1 class="line">About</h1>
+    <h2 class="line">About</h2>
     <img src="images/sujin.jpg" alt="photo of myself" id="sujin">
+   <h2>Sujin Lee</h2>
+   <h3>Designer & Front-end developer</h3>
 
     <p class="aboutme">I’m 21 years old, study interactive media design at Fanshawe College. As myself, did not have a coding background but still learning to code. Along with my design skills. I’m into web design, UX/UI, and motion as well. Trying to do new things all the time. Always, wondering and dreaming.</p>
 
-    <h2>Sujin Lee</h2>
-    <h3>Designer & Front-end developer</h3>
-    <!-- database of skills code tools will go here-->
-    <div>
-    {{#each skill}}
-        <div class="work-panel">
-            <h2>{{Name}}</h2>
-        </div>
-    {{/each}}
+    <div class="list"> 
+        <h2 class="hidden">Skills</h2>
+    <div class="skills">
+        <h2>Skills</h2>
+        <p>Web Design</p>
+        <p>UX/UI</p>
+        <p>Graphic Design</p>
+        <p>Motion Design</p>
+        <p>Vdieo Editing</p>
+    </div>
+    <div class="skills">
+        <h2>Code</h2>
+        <p>HTML5</p>
+        <p>CSS3</p>
+        <p>Sass</p>
+        <p>Javascript</p>
+        <p>PHP</p>
+    </div>
+    <div class="skills">
+        <h2>Tools</h2>
+        <p>Photoshop</p>
+        <p>Illustrator</p>
+        <p>InDesign</p>
+        <p>After Effects</p>
+        <p>Cinema 4D</p>
+    </div>
     </div>
 
 </section>
 
 <section id="work" class="panel">
-    <h1 class="line">Work</h1>
-    <div>
-    {{#each info}}<!-- this is like a JS forEach loop -->
+    <h2 class="line">Work</h2>
+    <h3>Please check out my previous works</h3>
+    <p>Design, Front-end, 3D motion, and video</p>
+    <div class="w-data">
+    {{#each info}}
         <div class="work-panel">
             <a href="{{ID}}" class="w-link">
                 <img src="images/{{Image}}" alt="work thumbnails" class="thumb">
-                <div class="img-hover"><p>Click to see more</p></div>
             </a>
         </div>
     {{/each}}
     </div>
 
-    <div class="video">
+    <div id="videoContainer">
         <h2 class="hidden">Demo Reel</h2>
-        <video src="includes/demo.mp4" id="video"></video>
+        <video src="inspiration/demo.mp4" poster="images/demo.jpg" id="video"></video>
         <div class="video-controls">
                 <button class="play-pause"><img src="images/play.png" alt="play/pause icon" id="plause"></button>
                 <input type="range" id="progress-bar" value="0">
@@ -53,8 +73,19 @@
 
 </section>
 
+<section class="lightbox">
+    <h2 class="hidden">Light Box</h2>
+        <span class="close">x</span>
+        <div class="sidebar">
+            <img src="" alt="image">
+        </div>
+        <div class="lb-content">
+    <!-- render the database content here -->
+        </div>
+    </section>
+
 <section id="contact" class="panel">
-    <h1 class="line">Contact</h1>
+    <h2 class="line">Contact</h2>
     <div id="form">
         <form id="touch" action="contact" method="post">
             <input placeholder="Name*" type="text">

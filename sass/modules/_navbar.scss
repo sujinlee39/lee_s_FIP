@@ -22,6 +22,17 @@ header {
     
 }
 
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+    #logo img {
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+  #burger {display: none;}
+
+}
+
 #mainNav {
     width: 8%;
     margin: 0 auto;
@@ -51,8 +62,8 @@ header {
                 text-transform: uppercase;
                 line-height: 10vh;
                 cursor: pointer;
-                //&.onPage {transition: .25s ease-in-out;}
-            } 
+                &.onPage {transition: .25s ease-in-out; color: tomato;}
+            }
 
                 a::before { 
                     content: '';
@@ -63,9 +74,64 @@ header {
                     border-radius: 20px;
                     height: 4px;
                     width: 0%;
+                    -webkit-transition: width 0.3s, background-color 0.5s ease-out;
+                    transition: width 0.3s, background-color 0.5s ease-out;
                 }
 
                 a:hover::before { width: 40%; }
         }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    #mobileNavFiller {display: none;
+      &.fill-it{
+        display: flex;
+        flex-direction: column;
+        margin-top: 60px;
+        height: 28px;
+      	width: 100%;
+      	background-color: rgba(255,255,255,.86);
+       	position: fixed;
+      }
+    }
+    #mainNav {display: none;
+      &.slideToggle {
+        display: flex;
+        flex-direction: column;
+        margin-top: 88px;
+      	width: 100%;
+      	background-color: rgba(255,255,255,.86);
+       	position: fixed;
+        ul {
+          display: flex;
+          flex-direction: column;
+         li a {
+          display: block;
+          padding: 15px 0;
+          text-align: center;
+        	font-weight: normal;
+        	text-decoration: none;
+          line-height: normal;
+          &.onPage{color: black;}
+          }
+        }
+      }
+    }
+
+    #burger{
+      background: url(../images/burger_menu.svg) center no-repeat;
+      border: none;
+      width: 20%;
+      max-width: 90px;
+      margin-right: 10px;
+      outline: none;
+      transition: all .2s ease-in-out;
+      &.expanded {
+        -webkit-transform: rotateZ(90deg);
+        -ms-transform: rotateZ(90deg);
+        transform: rotateZ(90deg);
+      }
     }
 }
