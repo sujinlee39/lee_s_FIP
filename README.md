@@ -1,1 +1,2 @@
-# lee_s_FIP
+# Sujin Lee's Portfolio
+
