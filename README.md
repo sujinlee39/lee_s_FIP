@@ -15,7 +15,7 @@ Links from the footer
 
 (error has occared for conntecting GitHub to Heroku works well in local)
 
-to view it in local need to change config.js as
+to view it in local need to change 'config.js' as
 
 `const config = { host: "localhost", port: 8889, uname: "root", pword: "root", database: "db_about" }`
 
@@ -23,4 +23,4 @@ and uncomment out
 
  `port: config.port,`
 
-in sql.js file
+in 'sql.js' file
