@@ -5,7 +5,7 @@ const myVM = (() => {
 
     let burger = document.querySelector('#burger'),
 	    burgerContent = document.querySelector('#mainNav'),
-	    navFiller = document.querySelector('#mobileNavFiller'),
+	    navFiller = document.querySelector('#mobileNavCon'),
 	    homeButton = document.querySelector('#home-nav'),
 	    aboutButton = document.querySelector('#about-nav'),
 	    workButton = document.querySelector('#work-nav'),
@@ -152,8 +152,7 @@ const myVM = (() => {
 
     function burgerMenu() {
 		burgerContent.classList.toggle("slideToggle");
-		navFiller.classList.toggle("fill-it");
-		burger.classList.toggle("expanded");
+		navFiller.classList.toggle("blank");
 	};
 
 //Burger Menu Event
