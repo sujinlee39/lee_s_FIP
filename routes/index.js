@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
     let query = "SELECT ID, title, Image FROM tbl_work";
 
     sql.query(query, (err, result) => {
-        if (err) { throw err; console.log(err); }
+        //if (err) { throw err; console.log(err); }
 
         //console.log(result); // should see objects wrapped in an array
 

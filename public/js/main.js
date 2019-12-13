@@ -14,7 +14,6 @@ const myVM = (() => {
         lightBox = document.querySelector('.lightbox'),
         scrollPosition = window.pageYOffset,
         video = document.querySelector("#video"),
-        controls = document.querySelector(".video-controls"),
         playPause = document.querySelector(".play-pause"),
         playPauseIcon = document.querySelector("#plause"),
         mute = document.querySelector(".mute"),
@@ -29,24 +28,24 @@ const myVM = (() => {
             scrollPosition = window.scrollY;
             console.log(scrollPosition);
     
-            if (scrollPosition <= 600) {
+            if (scrollPosition <= 680) {
                 homeButton.classList.add("onPage");
                 aboutButton.classList.remove("onPage");
                 workButton.classList.remove("onPage");
                 contactButton.classList.remove("onPage");
             };
-            if (scrollPosition >= 601) {
+            if (scrollPosition >= 735) {
                 homeButton.classList.remove("onPage");
                 aboutButton.classList.add("onPage");
                 workButton.classList.remove("onPage");
                 contactButton.classList.remove("onPage");
             };
-            if (scrollPosition >= 1280) {
+            if (scrollPosition >= 1725) {
                 aboutButton.classList.remove("onPage");
                 workButton.classList.add("onPage");
                 contactButton.classList.remove("onPage");
             };
-            if (scrollPosition >= 3320) {
+            if (scrollPosition >= 3900) {
                 workButton.classList.remove("onPage");
                 contactButton.classList.add("onPage");
             };
