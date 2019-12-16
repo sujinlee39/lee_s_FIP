@@ -29,4 +29,3 @@ and change 'sql.js' as
     user: config.uname,
     password: config.pword,
     database: config.database
-});`
