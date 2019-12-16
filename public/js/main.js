@@ -1,7 +1,4 @@
-// this is a partially revealing module pattern - just a variation on what we've already done
-
 const myVM = (() => {
-    // get the user buttons and fire off an async DB query with Fetch
 
     let burger = document.querySelector('#burger'),
 	    burgerContent = document.querySelector('#mainNav'),
@@ -26,15 +23,15 @@ const myVM = (() => {
 
         window.onscroll = function (){
             scrollPosition = window.scrollY;
-            console.log(scrollPosition);
+            //console.log(scrollPosition);
     
-            if (scrollPosition <= 680) {
+            if (scrollPosition <= 650) {
                 homeButton.classList.add("onPage");
                 aboutButton.classList.remove("onPage");
                 workButton.classList.remove("onPage");
                 contactButton.classList.remove("onPage");
             };
-            if (scrollPosition >= 735) {
+            if (scrollPosition >= 660) {
                 homeButton.classList.remove("onPage");
                 aboutButton.classList.add("onPage");
                 workButton.classList.remove("onPage");
@@ -45,7 +42,7 @@ const myVM = (() => {
                 workButton.classList.add("onPage");
                 contactButton.classList.remove("onPage");
             };
-            if (scrollPosition >= 3900) {
+            if (scrollPosition >= 4100) {
                 workButton.classList.remove("onPage");
                 contactButton.classList.add("onPage");
             };
@@ -53,9 +50,9 @@ const myVM = (() => {
         
 
     
-    function renderTools(media) {
+    function renderTools(tool) {
         return `<ul class="w-tools">
-                    ${media.map(item => `<li>${item}</li>`).join("")}
+                    ${tool.map(item => `<li>${item}</li>`).join("")}
                 </ul>`
     }
     
@@ -64,11 +61,11 @@ const myVM = (() => {
             targetImg = lightBox.querySelector('img');
 
         let infoContent = `
-            <p>Title: ${info.name}</p>
-            <p>Created: ${info.year}</p>
-            <p>Tools:</p>
+            <h3>${info.name}</h3>
+            <h3>${info.year}</h3>
+            <h3>Tools:</h3>
             ${renderTools(info.tools)}
-            <p>Description: ${info.description}</p>
+            <p>${info.description}</p>
         `;
 
         targetDiv.innerHTML = infoContent;

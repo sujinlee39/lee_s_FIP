@@ -13,14 +13,20 @@ Links from the footer
 - GitHub: https://github.com/sujinlee39
 - My URL: https://lee-s-portfolio.herokuapp.com/ or http://www.sujinlee06.com
 
-(error has occared for conntecting GitHub to Heroku works well in local)
+(error has occared for conntecting GitHub to Heroku/ works well in local)
 
-to view it in local need to change config.js as
+to view it in local need to change 'config.js' as
 
 `const config = { host: "localhost", port: 8889, uname: "root", pword: "root", database: "db_about" }`
 
-and uncomment out
+and change 'sql.js' as
 
- `port: config.port,`
-
-in sql.js file
+`const config = require("../config"); 
+ const sql = require('mysql');
+ const connect = sql.createConnection({
+    host: config.host,
+    port: config.port,
+    user: config.uname,
+    password: config.pword,
+    database: config.database
+});`
